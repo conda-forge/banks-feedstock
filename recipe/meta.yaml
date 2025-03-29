@@ -1,5 +1,5 @@
 {% set name = "banks" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/banks-{{ version }}.tar.gz
-  sha256: 036b7990f690a8282905fdc6970627efd3e7f1d05f09d6d39a565ef4e9b1971a
+  sha256: d1eb3b567cc7e18319c743387cd84a2cd2afb3621f793cf6a051b6993c6e4e2d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
