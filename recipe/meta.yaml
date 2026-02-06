@@ -1,5 +1,5 @@
 {% set name = "banks" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/banks-{{ version }}.tar.gz
-  sha256: 1ecb439a0b340588fcf9a8072d806540aad03c4b874ab9aff59ac8bc08c112ff
+  sha256: 62cb845a1a0f93dcc8553f940d1e07f5f69bbde425dc4d52c487d664c02965db
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -21,6 +21,7 @@ requirements:
     - hatchling
     - pip
   run:
+    - filetype >=1.2.0
     - python >={{ python_min }}
     - griffe
     - jinja2
