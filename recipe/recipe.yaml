@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: banks
-  version: "2.4.2"
+  version: "2.4.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/banks-${{ version }}.tar.gz
-  sha256: cda6013bd377ea7b701933578bfb9370fc21ad70bc13cedfc3f5cb2c034ca3dc
+  sha256: 07ae40dd08577857830428ba77ead477fe62fbb13e26d567635b880c88f50e81
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
