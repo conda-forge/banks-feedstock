@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: banks
-  version: "2.5.0"
+  version: 2.5.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/banks-${{ version }}.tar.gz
-  sha256: fdd4fd54b84dbe31cb51a1173c960697c73d683a52fb0b1d1957a557a8d6fcc8
+  sha256: a7ca5c250b605ae90cfd6e4ca5dd6ce2ee377d5d59021b6feba44e345910026d
 
 build:
   number: 0
@@ -30,13 +30,15 @@ requirements:
     - pydantic
     - deprecated
     - platformdirs
-
+    - typing_extensions
 tests:
   - python:
       imports:
         - banks
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: A prompt programming language
